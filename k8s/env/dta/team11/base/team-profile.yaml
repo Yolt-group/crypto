@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crypto
+spec:
+  template:
+    spec:
+      containers:
+        - name: crypto
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: team,$(ENVIRONMENT),$(NAMESPACE),$(ENVIRONMENT)-$(NAMESPACE)

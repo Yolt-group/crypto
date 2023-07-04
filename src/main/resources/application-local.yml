@@ -1,0 +1,17 @@
+yolt:
+  deployment:
+    namespace: default
+    environment: integration
+  vault:
+    address: https://vault.vault-dta.yolt.io
+    crypto:
+      auth:
+        path: integration/k8s/cluster%d/pods/%s
+      secrets:
+        path: integration/k8s/pods/%s/kv/crypto
+  crypto:
+    import:
+      enabled: false
+cluster:
+  cloudhsm:
+    location: "security-dta"

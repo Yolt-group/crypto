@@ -1,0 +1,7 @@
+@startuml
+[Crypto] as crypto
+
+[Vault KeyValue] as vaultkeyvalue
+
+crypto -[#black]-> vaultkeyvalue : HTTP
+@enduml

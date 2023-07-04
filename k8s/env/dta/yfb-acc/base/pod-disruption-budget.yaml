@@ -1,0 +1,11 @@
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  name: crypto-pod-disruption-budget
+  labels:
+    name: crypto
+spec:
+  minAvailable: 0
+  selector:
+    matchLabels:
+      name: crypto

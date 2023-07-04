@@ -1,0 +1,29 @@
+namespace: default
+environment: "test"
+CLUSTER_NAME: "cluster0"
+
+yolt:
+  vault:
+    address: "http://vault/"
+    auth:
+      service-account-token-file: src/test/resources/test-vault-token.txt
+  crypto:
+    import:
+      enabled: true
+    cloudHSM:
+      enabled: false
+  client-token:
+    verification:
+      dryrun: false
+cluster:
+  cloudhsm:
+    location: "security-dta"
+
+service:
+  tokens:
+    signature-jwks: "{\"keys\":[{\"use\":\"sig\",\"kty\":\"RSA\",\"kid\":\"1B121605-E2F5-4A99-B124-DBAC2C553B5E\",\"alg\":\"RS512\",\"n\":\"rc9zels1Ai9tVFuEptbz6-81oe4JWg3rsJRxkMEOXMvegjnDkMGqEd4-4G2BGH8YDYTsY7tRW-MX1YA3k4yNU7LQ9Yce7p53NKfbFuCyJrJbHwSxTgj4l7JqgcEq1LxfGWEImFiO0I4xcilIa0vOl7HCQA7LPbt4jR_R4-5KYHArVz2qL7oq4qAmIDj8RJtaq-aCLgfvg0cphpmqAncaR8LDRXzRqLPTYR-gsYF3oEa_chuyTIrX9hOz7dph9E2qmc4bEZHpP7Eg8-1WhC-Dv5xwLF9S6QX4OMsH2CTD0AyiCyv3vRouINrGTZ7vWwPOtpA-Z_9hVwOk7WYmailx8Q\",\"e\":\"AQAB\",\"p\":\"0NUwlzPH5aQyhW7DmBByIS8n8kFHWzRRjdUC4q8BNfVfvklIQ9lsXbdZrdbzzMezO_U1a7HkkvOqfgncqPY768btQaiu-IJ2gxLlzd2sZ0Vyp0n_w8GGk4L_00R2qQUITfbzcPLEzr_MVIkIGSrG6tsvwxY3JnbwBrwSYBqaa-0\",\"q\":\"1RE_nL0LE4Xz6iQmOnAukknZM0x3e0fIoSEa1lfPskwhsQ9WjIYtDVMn6mvtz4Gxp571yR1RiR2W4UmNcFUAb8Ve3UXJtcQOygfAntsOvPIXNEKzj8_oyUmDmv_t9Tr-ncEtqfRGz-4B8VIVQMP_702FTIV5CmFsJUu93C9BBZU\",\"dp\":\"QibGNZ9Zew0AU_Q6UTkkbg6aAMtc5y8zhlIrj9MP9x-7LHPaSGPfR_CEn-SvZfb8d8m9GlhHp6U4JKTLGVqmsJFbJqlgg6gQEoUx9nx52FzPbN6r_j6XerLMhwfw7qmBb_ECPI0qerOW7lBaGF7MlCjKgGnRHoYekoOQ7pB-yiE\",\"dq\":\"NnMN-pQk_HxC9Rb_3fdFL4VHyGBGOG8DyomXPid6oGnsQj9VMtwnLzyM-s9SGrFeISPyU872Q0AYisItLwPJ9MZPk-R9w8GytdZ9VxtMDOUhIO3azWmoZ6gtxbKZsQ2-e7oeXUxbvE9ql60OWVq9UP5SjledsxVqea19e4Nn7nE\",\"qi\":\"nY8APQ3On5MwjHuPMyInb8udtixJlKUi6FsglOGbueNvqjrDfg9VnrlaGRHUNIhSGnk2QfBXnaILR2FY-RT4yFZQxQlNDp7F5D5Rx16a14bo2TomZXq0MzzCN7Om4Go7TInHmERqy3AvOr4tIj1dPrYxgiTxjHH982iyBnk8wzA\"}]}"
+management:
+  server:
+    port: 8888
+    ssl:
+      enabled: false

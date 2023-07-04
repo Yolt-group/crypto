@@ -1,0 +1,64 @@
+server:
+  servlet:
+    context-path: /crypto
+  port: 8080
+info:
+  appName: crypto
+  appVersion: 0.1
+spring:
+  main:
+    banner-mode: "off"
+
+yolt:
+  crypto:
+    cloudHSM:
+      enabled: true
+    deletable-key-environments:
+      - team1
+      - team2
+      - team3
+      - team4
+      - team5
+      - team6
+      - team7
+      - team8
+      - team9
+      - team10
+      - team11
+      - team12
+      - team13
+      - integration
+      - performance
+      - acc
+      - yfb-acc
+      - yfb-sandbox
+      - app-acc
+    import:
+      enabled: false
+  commons:
+    error-handling:
+      prefix: CR
+    cassandra:
+      versioning:
+        enabled: false
+  vault:
+    enabled: true
+    secret:
+      enabled: true
+  client-token:
+    verification:
+      enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health, metrics, prometheus
+      base-path: /actuator
+  server:
+    port: 8444
+    ssl:
+      enabled: true
+      key-store: /vault/secrets/keystore.p12
+      key-alias: keystore
+      key-store-password: dontchangeit

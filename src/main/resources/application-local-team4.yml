@@ -1,0 +1,9 @@
+yolt:
+  deployment:
+    environment: team4
+  vault:
+    crypto:
+      auth:
+        path: team4/k8s/cluster%d/pods/%s
+      secrets:
+        path: team4/k8s/pods/%s/kv/crypto
